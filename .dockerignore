@@ -1,0 +1,8 @@
+**/node_modules
+**/npm-debug.log
+**/.git
+build
+*.md
+.env.example
+Makefile
+docker/Dockerfile*

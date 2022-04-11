@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  gh-users-ui_dev:
+    profiles: ["dev"]
+    container_name: gh-users-ui_dev
+    image: gh-users-ui_dev
+    build:
+      dockerfile: ./docker/Dockerfile.dev
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:3000
+
+  gh-users-ui_prod:
+    profiles: ["prod"]
+    container_name: gh-users-ui_prod
+    image: gh-users-ui_prod
+    build:
+      dockerfile: ./docker/Dockerfile.prod
+      context: .
+      target: production
+    ports:
+      - 80:80
